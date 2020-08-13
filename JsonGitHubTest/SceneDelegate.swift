@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let builder = ModelBuilder()
         let navigationController = UINavigationController()
-        let router = Router(navigationController: navigationController, assamblyBilder: builder)
+        let router = Router(navigationController: navigationController, asBilder: builder)
         router.mainViewController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

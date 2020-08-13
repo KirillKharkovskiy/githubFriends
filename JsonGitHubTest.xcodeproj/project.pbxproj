@@ -22,8 +22,8 @@
 		ED7F438A244AF14C009C9EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7F4388244AF14C009C9EA2 /* LaunchScreen.storyboard */; };
 		ED7F4392244B0BCD009C9EA2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7F4391244B0BCD009C9EA2 /* Model.swift */; };
 		ED7F4396244B2AEA009C9EA2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7F4395244B2AEA009C9EA2 /* NetworkService.swift */; };
-		EDD2B18B244C839D00824EB5 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B18A244C839D00824EB5 /* FollowersViewController.swift */; };
-		EDD2B18F244C843D00824EB5 /* FollowersCellCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B18E244C843D00824EB5 /* FollowersCellCollectionView.swift */; };
+		EDD2B18B244C839D00824EB5 /* FollowersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B18A244C839D00824EB5 /* FollowersController.swift */; };
+		EDD2B18F244C843D00824EB5 /* FollowerCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B18E244C843D00824EB5 /* FollowerCellCollection.swift */; };
 		EDE59DF8244C490D0033A3A5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE59DF7244C490D0033A3A5 /* TableViewCell.swift */; };
 		EDFB1FB224E2901A0086FD36 /* Allert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFB1FB124E2901A0086FD36 /* Allert.swift */; };
 		FC0391D874D1F1D9FE6B429F /* Pods_JsonGitHubTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A671B4B146B06A478C0BB3 /* Pods_JsonGitHubTest.framework */; };
@@ -50,8 +50,8 @@
 		ED7F438B244AF14C009C9EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED7F4391244B0BCD009C9EA2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ED7F4395244B2AEA009C9EA2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		EDD2B18A244C839D00824EB5 /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
-		EDD2B18E244C843D00824EB5 /* FollowersCellCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCellCollectionView.swift; sourceTree = "<group>"; };
+		EDD2B18A244C839D00824EB5 /* FollowersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersController.swift; sourceTree = "<group>"; };
+		EDD2B18E244C843D00824EB5 /* FollowerCellCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCellCollection.swift; sourceTree = "<group>"; };
 		EDE59DF7244C490D0033A3A5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EDFB1FB124E2901A0086FD36 /* Allert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,8 +105,8 @@
 		ED3156E024D4714C003E7BEC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EDD2B18A244C839D00824EB5 /* FollowersViewController.swift */,
-				EDD2B18E244C843D00824EB5 /* FollowersCellCollectionView.swift */,
+				EDD2B18A244C839D00824EB5 /* FollowersController.swift */,
+				EDD2B18E244C843D00824EB5 /* FollowerCellCollection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,14 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDD2B18F244C843D00824EB5 /* FollowersCellCollectionView.swift in Sources */,
+				EDD2B18F244C843D00824EB5 /* FollowerCellCollection.swift in Sources */,
 				ED7F4392244B0BCD009C9EA2 /* Model.swift in Sources */,
 				ED3156D924D40686003E7BEC /* NetworkingServiceData.swift in Sources */,
 				ED7F437F244AF149009C9EA2 /* UserViewController.swift in Sources */,
 				ED3156DB24D406C4003E7BEC /* DataService.swift in Sources */,
 				ED7F437B244AF149009C9EA2 /* AppDelegate.swift in Sources */,
 				ED3156E824D47216003E7BEC /* Router.swift in Sources */,
-				EDD2B18B244C839D00824EB5 /* FollowersViewController.swift in Sources */,
+				EDD2B18B244C839D00824EB5 /* FollowersController.swift in Sources */,
 				ED3156DE24D47078003E7BEC /* UserPresentation.swift in Sources */,
 				EDFB1FB224E2901A0086FD36 /* Allert.swift in Sources */,
 				ED3156E624D47201003E7BEC /* Builder.swift in Sources */,

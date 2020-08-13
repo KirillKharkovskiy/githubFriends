@@ -5,8 +5,8 @@ protocol DataServiceProtocol {
     func followers(followers: String, completion: @escaping( [User]? ) -> Void)
 }
 class DataService: DataServiceProtocol {
-    var networkService: NetworkServiceDataProtocol!
-    init (networkService: NetworkServiceDataProtocol = NetworkServiceData()) {
+    var networkService: NetServDataProtocol!
+    init (networkService: NetServDataProtocol = NetworkServiceData()) {
         self.networkService = networkService
     }
     func mainRequest(completion: @escaping( [User]? ) -> Void) {

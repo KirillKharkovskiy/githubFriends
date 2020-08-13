@@ -1,5 +1,5 @@
 import UIKit
-class FollowersViewController: UIViewController {
+class FollowersController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     let dataService = DataService()
     var presenter: FollowePresenter!
@@ -15,12 +15,12 @@ class FollowersViewController: UIViewController {
 }
 
 // MARK: - CollectionView,DataSource,Delegate
-extension FollowersViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension FollowersController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.followersArray.count
     }
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? FollowersCellCollectionView
+func collectionView(_ colview: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = colview.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? FollowerCellCollection
         let followers = presenter.followersArray[indexPath.row]
         cell?.configure(with: followers)
         return cell!
@@ -28,7 +28,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 }
 
 // MARK: - Request
-extension FollowersViewController: FollowerViewControllerProtocol {
+extension FollowersController: FollowerVCProtocol {
     func failureWithData(_ error: Error) {
         showAlert(title: "Error", message: error.localizedDescription)
     }

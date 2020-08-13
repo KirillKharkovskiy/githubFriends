@@ -16,7 +16,7 @@ class TableViewCell: UITableViewCell {
               placeholder: UIImage(named: "ava"),
               transition: .fadeIn(duration: 0.5)
             )
-        if let imageLogo = userArray.avatar_url {
+        if let imageLogo = userArray.avatarUrl {
             let url = URL(string: imageLogo)!
             Nuke.loadImage(with: url, options: options, into: imageViewLabel)
             self.imageViewLabel.contentMode = .scaleAspectFill

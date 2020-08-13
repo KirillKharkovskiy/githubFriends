@@ -1,5 +1,5 @@
 import Foundation
-protocol FollowerViewControllerProtocol: class {
+protocol FollowerVCProtocol: class {
     func failureWithData(_ error: Error)
     func reloadData()
 }
@@ -7,22 +7,21 @@ protocol FollowerPresenterProtocol {
     func setUser()
 }
 final class FollowePresenter: FollowerPresenterProtocol {
-    
-    private var networkService: NetworkServiceDataProtocol!
-    weak var view: FollowerViewControllerProtocol?
-    var dataService: DataServiceProtocol!
+    private var netServ: NetServDataProtocol!
+    weak var view: FollowerVCProtocol?
+    var dataServ: DataServiceProtocol!
     var followersArray = [User]()
     var user: User?
-    init(view: FollowerViewControllerProtocol, networkService: NetworkServiceDataProtocol, user: User?, dataService: DataServiceProtocol) {
+    init(view: FollowerVCProtocol, netServ: NetServDataProtocol, user: User?, dataServ: DataServiceProtocol) {
         self.view = view
-        self.networkService = networkService
+        self.netServ = netServ
         self.user = user
-        self.dataService = dataService
+        self.dataServ = dataServ
         setUser()
     }
     public func setUser() {
         guard let followersLogin = user?.login else {return}
-        dataService.followers(followers: followersLogin) { [weak self] (follower) in
+        dataServ.followers(followers: followersLogin) { [weak self] (follower) in
             DispatchQueue.main.async {
                 guard let follower = follower else { return }
                 self?.followersArray = follower

@@ -1,6 +1,6 @@
 import UIKit
 import Nuke
-class FollowersCellCollectionView: UICollectionViewCell {
+class FollowerCellCollection: UICollectionViewCell {
     @IBOutlet weak var imageViewLabel: UIImageView!
     @IBOutlet weak var loginLabel: UILabel!
     
@@ -10,7 +10,7 @@ class FollowersCellCollectionView: UICollectionViewCell {
           placeholder: UIImage(named: "ava"),
           transition: .fadeIn(duration: 0.5)
         )
-        if let imageLogo = followersArray.avatar_url {
+        if let imageLogo = followersArray.avatarUrl {
             let url = URL(string: imageLogo)!
             Nuke.loadImage(with: url, options: options, into: imageViewLabel)
             self.imageViewLabel.contentMode = .scaleAspectFill

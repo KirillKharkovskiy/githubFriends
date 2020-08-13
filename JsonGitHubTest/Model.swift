@@ -1,16 +1,20 @@
 import Foundation
-struct User: Decodable {
+
+struct User: Codable {
     let login: String?
-    let id: Int32?
-    let avatar_url: String?
-    let followers_url: String?
-    
+    let idUser: Int32?
+    let avatarUrl: String?
+    let followersUrl: String?
+    enum CodingKeys: String, CodingKey {
+        case login = "login"
+        case idUser = "id"
+        case avatarUrl = "avatar_url"
+        case followersUrl = "followers_url"
+    }
     init() {
         self.login = nil
-        self.id = nil
-        self.avatar_url = nil
-        self.followers_url = nil
+        self.idUser = nil
+        self.avatarUrl = nil
+        self.followersUrl = nil
     }
 }
-
-

@@ -14,7 +14,6 @@ class UserViewController: UIViewController {
         tableView.delegate = self
         presenter.getDataFromNetworkService()
     }
-    
     private func setupNavigationController() {
         navigationController?.navigationBar.prefersLargeTitles = true // Bigtitle
     }
@@ -38,7 +37,7 @@ extension UserViewController: UITableViewDataSource, UITableViewDelegate {
     // - пагинация
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == presenter.users.count - 1 {
-            guard let userLastId = presenter.users.last?.id else { return }
+            guard let userLastId = presenter.users.last?.idUser else { return }
             dataService.lastUserID(lastUserID: Int(userLastId)) { (user) in
                 self.presenter.users.append(contentsOf: user!)
                 tableView.reloadData()
@@ -52,7 +51,7 @@ extension UserViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 // MARK: - Request
-extension UserViewController: UserViewControllerProtocol {
+extension UserViewController: UserVCProtocol {
     func reloadData() {
         self.tableView.reloadData()
     }

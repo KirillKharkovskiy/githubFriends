@@ -1,6 +1,6 @@
 import Foundation
 
-protocol UserViewControllerProtocol: class {
+protocol UserVCProtocol: class {
     func failureWithData(_ error: Error)
     func reloadData()
 }
@@ -11,19 +11,19 @@ protocol UserPresenterProtocol {
 }
 
 final class UserPresenter: UserPresenterProtocol {
-    private var networkService: NetworkServiceDataProtocol!
-    weak var view: UserViewControllerProtocol?
-    var dataService: DataServiceProtocol! // 3) тут соблюдаем СОЛИД
+    private var netServ: NetServDataProtocol!
+    weak var view: UserVCProtocol?
+    var dataServ: DataServiceProtocol!
     var users = [User]()
     var router: RouterProtocol!
-    init(view: UserViewControllerProtocol, networkService: NetworkServiceDataProtocol, dataService: DataServiceProtocol, router: RouterProtocol) {
+    init(view: UserVCProtocol, netServ: NetServDataProtocol, dataServ: DataServiceProtocol, router: RouterProtocol) {
         self.view = view
-        self.networkService = networkService
-        self.dataService = dataService
+        self.netServ = netServ
+        self.dataServ = dataServ
         self.router = router
     }
     func getDataFromNetworkService() {
-        dataService.mainRequest { (userArray) in
+        dataServ.mainRequest { (userArray) in
             print("done")
             DispatchQueue.main.async {
                 guard let user = userArray else { return }
